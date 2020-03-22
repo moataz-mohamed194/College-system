@@ -89,7 +89,7 @@ class Addstudentpage extends State<Addstudent> {
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
-            appBar: AppBar(
+            /*appBar: AppBar(
               backgroundColor: Color(0xff002633),
               flexibleSpace: TabBar(
                 indicatorColor: Colors.white,
@@ -102,19 +102,19 @@ class Addstudentpage extends State<Addstudent> {
                   ),
                 ],
               ),
-            ),
+            ),*/
             body: SingleChildScrollView(
                 child: Container(
-              height: MediaQuery.of(context).size.height,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("image_gif/same.jpg"),
-                  fit: BoxFit.fill,
-                ),
-              ),
-              child: TabBarView(
-                children: [
-                  Container(
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("image_gif/same.jpg"),
+              fit: BoxFit.fill,
+            ),
+          ),
+          child:
+              // TabBarView(children: [
+              /* Container(
                       child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -150,252 +150,230 @@ class Addstudentpage extends State<Addstudent> {
                         )
                       ],
                     ),
-                  )),
-                  Container(
-                    child: Center(
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                          Form(
-                            key: _formKey,
-                            child: Container(
-                              width: MediaQuery.of(context).size.width / 1.4,
-                              child: Column(
-                                children: <Widget>[
-                                  Container(
-                                    child: TextFormField(
-                                      cursorColor: Colors.white,
-                                      keyboardType: TextInputType.text,
-                                      controller: controllerstudentname,
-                                      textInputAction: TextInputAction.next,
-                                      focusNode: studentname,
-                                      onSaved: (input) =>
-                                          studentnamesave = input,
-                                      onFieldSubmitted: (term) {
-                                        _fieldFocusChange(context, studentname,
-                                            studentaddress);
-                                      },
-                                      decoration: new InputDecoration(
-                                        labelStyle:
-                                            TextStyle(color: Colors.grey),
-                                        labelText: "Student Name",
-                                        hintText: "Enter Student Name",
-                                      ),
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Enter Student Name';
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                  Container(
-                                    child: TextFormField(
-                                      cursorColor: Colors.white,
-                                      keyboardType: TextInputType.text,
-                                      controller: controllerstudentaddress,
-                                      textInputAction: TextInputAction.next,
-                                      focusNode: studentaddress,
-                                      onSaved: (input) =>
-                                          studentaddresssave = input,
-                                      onFieldSubmitted: (term) {
-                                        _fieldFocusChange(context,
-                                            studentaddress, studenthighschool);
-                                      },
-                                      decoration: new InputDecoration(
-                                        labelStyle:
-                                            TextStyle(color: Colors.grey),
-                                        labelText: "Student address",
-                                        hintText: "Enter address",
-                                      ),
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Enter address';
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                  Container(
-                                    child: TextFormField(
-                                      cursorColor: Colors.white,
-                                      keyboardType: TextInputType.text,
-                                      controller: controllerstudenthighschool,
-                                      textInputAction: TextInputAction.next,
-                                      focusNode: studenthighschool,
-                                      onSaved: (input) =>
-                                          studenthighschoolsave = input,
-                                      onFieldSubmitted: (term) {
-                                        _fieldFocusChange(
-                                            context,
-                                            studenthighschool,
-                                            studentphonebumber);
-                                      },
-                                      decoration: new InputDecoration(
-                                        labelStyle:
-                                            TextStyle(color: Colors.grey),
-                                        labelText: "Student high school",
-                                        hintText: "Enter high school Name",
-                                      ),
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Enter high school Name';
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                  Container(
-                                    child: TextFormField(
-                                      cursorColor: Colors.white,
-                                      keyboardType: TextInputType.text,
-                                      controller: controllerstudentphonenumber,
-                                      textInputAction: TextInputAction.next,
-                                      focusNode: studentphonebumber,
-                                      onSaved: (input) =>
-                                          studentphonebumbersave = input,
-                                      onFieldSubmitted: (term) {
-                                        _fieldFocusChange(
-                                            context,
-                                            studentphonebumber,
-                                            studentNationalid);
-                                      },
-                                      decoration: new InputDecoration(
-                                        labelStyle:
-                                            TextStyle(color: Colors.grey),
-                                        labelText: "Student phone number",
-                                        hintText: "Enter phone number",
-                                      ),
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Enter phone number';
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                  Container(
-                                    child: TextFormField(
-                                      cursorColor: Colors.white,
-                                      keyboardType: TextInputType.text,
-                                      controller: controllerstudentNationalid,
-                                      textInputAction: TextInputAction.next,
-                                      focusNode: studentNationalid,
-                                      onSaved: (input) =>
-                                          studentNationalidsave = input,
-                                      onFieldSubmitted: (term) {
-                                        _fieldFocusChange(context,
-                                            studentNationalid, studentdegree);
-                                      },
-                                      decoration: new InputDecoration(
-                                        labelStyle:
-                                            TextStyle(color: Colors.grey),
-                                        labelText: "Student National id",
-                                        hintText: "Enter National id",
-                                      ),
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Enter National id';
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                  Container(
-                                    child: TextFormField(
-                                      cursorColor: Colors.white,
-                                      keyboardType: TextInputType.text,
-                                      controller: controllerstudentdegree,
-                                      textInputAction: TextInputAction.next,
-                                      focusNode: studentdegree,
-                                      onSaved: (input) =>
-                                          studentdegreesave = input,
-                                      onFieldSubmitted: (term) {
-                                        studentdegree.unfocus();
-                                      },
-                                      decoration: new InputDecoration(
-                                        labelStyle:
-                                            TextStyle(color: Colors.grey),
-                                        labelText: "Student degree",
-                                        hintText: "Enter degree",
-                                      ),
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Enter degree';
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                  Container(
-                                    child: TextFormField(
-                                      cursorColor: Colors.white,
-                                      keyboardType: TextInputType.text,
-                                      controller: controllerstudentseatnumber,
-                                      textInputAction: TextInputAction.done,
-                                      focusNode: seatnumber,
-                                      onSaved: (input) =>
-                                          studentseatnumbersave = input,
-                                      onFieldSubmitted: (term) {
-                                        studentdegree.unfocus();
-                                      },
-                                      decoration: new InputDecoration(
-                                        labelStyle:
-                                            TextStyle(color: Colors.grey),
-                                        labelText: "Student seat number",
-                                        hintText: "Enter seat number",
-                                      ),
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Enter seat number';
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                  Card(
-                                    color: Color(0xfff74883),
-                                    child: FlatButton(
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              2,
-                                          child: Text(
-                                            "Add Student",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 17),
-                                          ),
-                                        ),
-                                        onPressed: () {
-                                          submitStudent(
-                                              controllerstudentname.text,
-                                              controllerstudentNationalid.text,
-                                              controllerstudentphonenumber.text,
-                                              controllerstudentaddress.text,
-                                              controllerstudenthighschool.text,
-                                              controllerstudentdegree.text,
-                                              controllerstudentseatnumber.text);
-                                        }),
-                                  ),
-                                ],
+                  )),*/
+              Container(
+            child: Center(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                  Form(
+                    key: _formKey,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 1.4,
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            child: TextFormField(
+                              cursorColor: Colors.white,
+                              keyboardType: TextInputType.text,
+                              controller: controllerstudentname,
+                              textInputAction: TextInputAction.next,
+                              focusNode: studentname,
+                              onSaved: (input) => studentnamesave = input,
+                              onFieldSubmitted: (term) {
+                                _fieldFocusChange(
+                                    context, studentname, studentaddress);
+                              },
+                              decoration: new InputDecoration(
+                                labelStyle: TextStyle(color: Colors.grey),
+                                labelText: "Student Name",
+                                hintText: "Enter Student Name",
                               ),
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return 'Enter Student Name';
+                                } else {
+                                  return null;
+                                }
+                              },
                             ),
-                          )
-                        ])),
-                  ),
-                ],
-              ),
-            ))),
+                          ),
+                          Container(
+                            child: TextFormField(
+                              cursorColor: Colors.white,
+                              keyboardType: TextInputType.text,
+                              controller: controllerstudentaddress,
+                              textInputAction: TextInputAction.next,
+                              focusNode: studentaddress,
+                              onSaved: (input) => studentaddresssave = input,
+                              onFieldSubmitted: (term) {
+                                _fieldFocusChange(
+                                    context, studentaddress, studenthighschool);
+                              },
+                              decoration: new InputDecoration(
+                                labelStyle: TextStyle(color: Colors.grey),
+                                labelText: "Student address",
+                                hintText: "Enter address",
+                              ),
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return 'Enter address';
+                                } else {
+                                  return null;
+                                }
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: TextFormField(
+                              cursorColor: Colors.white,
+                              keyboardType: TextInputType.text,
+                              controller: controllerstudenthighschool,
+                              textInputAction: TextInputAction.next,
+                              focusNode: studenthighschool,
+                              onSaved: (input) => studenthighschoolsave = input,
+                              onFieldSubmitted: (term) {
+                                _fieldFocusChange(context, studenthighschool,
+                                    studentphonebumber);
+                              },
+                              decoration: new InputDecoration(
+                                labelStyle: TextStyle(color: Colors.grey),
+                                labelText: "Student high school",
+                                hintText: "Enter high school Name",
+                              ),
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return 'Enter high school Name';
+                                } else {
+                                  return null;
+                                }
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: TextFormField(
+                              cursorColor: Colors.white,
+                              keyboardType: TextInputType.text,
+                              controller: controllerstudentphonenumber,
+                              textInputAction: TextInputAction.next,
+                              focusNode: studentphonebumber,
+                              onSaved: (input) =>
+                                  studentphonebumbersave = input,
+                              onFieldSubmitted: (term) {
+                                _fieldFocusChange(context, studentphonebumber,
+                                    studentNationalid);
+                              },
+                              decoration: new InputDecoration(
+                                labelStyle: TextStyle(color: Colors.grey),
+                                labelText: "Student phone number",
+                                hintText: "Enter phone number",
+                              ),
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return 'Enter phone number';
+                                } else {
+                                  return null;
+                                }
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: TextFormField(
+                              cursorColor: Colors.white,
+                              keyboardType: TextInputType.text,
+                              controller: controllerstudentNationalid,
+                              textInputAction: TextInputAction.next,
+                              focusNode: studentNationalid,
+                              onSaved: (input) => studentNationalidsave = input,
+                              onFieldSubmitted: (term) {
+                                _fieldFocusChange(
+                                    context, studentNationalid, studentdegree);
+                              },
+                              decoration: new InputDecoration(
+                                labelStyle: TextStyle(color: Colors.grey),
+                                labelText: "Student National id",
+                                hintText: "Enter National id",
+                              ),
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return 'Enter National id';
+                                } else {
+                                  return null;
+                                }
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: TextFormField(
+                              cursorColor: Colors.white,
+                              keyboardType: TextInputType.text,
+                              controller: controllerstudentdegree,
+                              textInputAction: TextInputAction.next,
+                              focusNode: studentdegree,
+                              onSaved: (input) => studentdegreesave = input,
+                              onFieldSubmitted: (term) {
+                                studentdegree.unfocus();
+                              },
+                              decoration: new InputDecoration(
+                                labelStyle: TextStyle(color: Colors.grey),
+                                labelText: "Student degree",
+                                hintText: "Enter degree",
+                              ),
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return 'Enter degree';
+                                } else {
+                                  return null;
+                                }
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: TextFormField(
+                              cursorColor: Colors.white,
+                              keyboardType: TextInputType.text,
+                              controller: controllerstudentseatnumber,
+                              textInputAction: TextInputAction.done,
+                              focusNode: seatnumber,
+                              onSaved: (input) => studentseatnumbersave = input,
+                              onFieldSubmitted: (term) {
+                                studentdegree.unfocus();
+                              },
+                              decoration: new InputDecoration(
+                                labelStyle: TextStyle(color: Colors.grey),
+                                labelText: "Student seat number",
+                                hintText: "Enter seat number",
+                              ),
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return 'Enter seat number';
+                                } else {
+                                  return null;
+                                }
+                              },
+                            ),
+                          ),
+                          Card(
+                            color: Color(0xfff74883),
+                            child: FlatButton(
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  width: MediaQuery.of(context).size.width / 2,
+                                  child: Text(
+                                    "Add Student",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 17),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  submitStudent(
+                                      controllerstudentname.text,
+                                      controllerstudentNationalid.text,
+                                      controllerstudentphonenumber.text,
+                                      controllerstudentaddress.text,
+                                      controllerstudenthighschool.text,
+                                      controllerstudentdegree.text,
+                                      controllerstudentseatnumber.text);
+                                }),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                ])),
+          ),
+          // ],),
+        ))),
       ),
     );
   }
