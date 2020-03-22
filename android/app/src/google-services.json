@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1005896302737",
+    "firebase_url": "https://collage-e7ea1.firebaseio.com",
+    "project_id": "collage-e7ea1",
+    "storage_bucket": "collage-e7ea1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005896302737:android:d4a9ff5943f90b46187f30",
+        "android_client_info": {
+          "package_name": "com.example.collage2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005896302737-d1l69123dqekcka8tnl9vohh7lth8qfg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP2Hu9salkIzcyVdvVKLP93cFCqwDzb3U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1005896302737-d1l69123dqekcka8tnl9vohh7lth8qfg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
