@@ -9,30 +9,33 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^0.1.2
-  qr_code_scanner: ^0.0.12
-  fluttertoast: ^3.1.3
-  toast: ^0.1.5
-  url_launcher: 
-  flutter_linkify: ^3.1.0
-  firebase_database:
+  cupertino_icons: any
+  qr_code_scanner: any
+  fluttertoast: any
+  toast: any
+  file_picker: 1.4.3+1
+  url_launcher: any
+  flutter_linkify: any
+  firebase_database: any
   firebase_auth: any
   firebase_core: any
-  cloud_firestore: ^0.12.9
-  firebase_storage:
-  shared_preferences: ^0.5.3+5
-  path_provider: ^1.4.4
-  http: ^0.12.0+4
-  carousel_slider: ^1.4.1
-  carousel_pro: ^1.0.0
-  fluttie: ^0.3.0
-  flutter_lottie: ^0.2.0
-  lottie_flutter: ^0.2.0
+  cloud_firestore: any
+  firebase_storage: any
+  shared_preferences: any
+  path_provider: any
+  http: any
+  carousel_slider: any
+  carousel_pro: any
+  fluttie: any
+  flutter_lottie: any
+  lottie_flutter: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+module:
+  androidX: true 
 
 
 flutter:
@@ -40,3 +43,4 @@ flutter:
   assets:
     - image_gif/animi.json
     - image_gif/
+    
