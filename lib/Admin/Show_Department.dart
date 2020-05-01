@@ -77,66 +77,59 @@ class ShowDepartmentpage extends State<ShowDepartment> {
                                 children: <Widget>[
                                   Card(
                                       child: Container(
-                                    height: MediaQuery.of(context).size.height /
-                                        3.8,
+                                    width: MediaQuery.of(context).size.width,
                                     padding: EdgeInsets.all(
                                         MediaQuery.of(context).size.height /
                                             70),
                                     child: Column(
                                       children: <Widget>[
                                         Container(
-                                          child: Row(
+                                          alignment: Alignment.topLeft,
+                                          child: Wrap(
                                             children: <Widget>[
-                                              Text("Name :",
+                                              Text(
+                                                  "Name :${item[index]['Name']}",
                                                   style:
                                                       TextStyle(fontSize: 17)),
-                                              Text(item[index]['Name'],
-                                                  style:
-                                                      TextStyle(fontSize: 17))
                                             ],
                                           ),
                                         ),
                                         Container(
-                                          child: Row(
+                                          alignment: Alignment.topLeft,
+                                          child: Wrap(
                                             children: <Widget>[
-                                              Text("Capacity :",
+                                              Text(
+                                                  "Capacity :${item[index]['Capacity']}",
                                                   style:
                                                       TextStyle(fontSize: 17)),
-                                              Text(item[index]['Capacity'],
-                                                  style:
-                                                      TextStyle(fontSize: 17))
                                             ],
                                           ),
                                         ),
                                         Container(
-                                          child: Row(
+                                          alignment: Alignment.topLeft,
+                                          child: Wrap(
                                             children: <Widget>[
-                                              Text("Min Degree :",
+                                              Text(
+                                                  "Min Degree :${item[index]['Min Degree']}",
                                                   style:
                                                       TextStyle(fontSize: 17)),
-                                              Text(item[index]['Min Degree'],
-                                                  style:
-                                                      TextStyle(fontSize: 17))
                                             ],
                                           ),
                                         ),
                                         Container(
-                                          child: Row(
-                                            children: <Widget>[
-                                              Text("Description:",
-                                                  style:
-                                                      TextStyle(fontSize: 17)),
-                                              Text(item[index]['Description'],
-                                                  style:
-                                                      TextStyle(fontSize: 17))
-                                            ],
-                                          ),
-                                        ),
+                                            alignment: Alignment.topLeft,
+                                            child: Wrap(
+                                              children: <Widget>[
+                                                Text(
+                                                    "Description:${item[index]['Description']}",
+                                                    style:
+                                                        TextStyle(fontSize: 17))
+                                              ],
+                                            )),
                                         Card(
                                           color: Color(0xfff74883),
                                           child: FlatButton(
                                               child: Container(
-                                                
                                                 alignment: Alignment.center,
                                                 width: MediaQuery.of(context)
                                                         .size
